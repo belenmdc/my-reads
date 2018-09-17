@@ -1,17 +1,21 @@
 import React from "react";
 
-export default ({ title, author, cover, id }) => (
+export default props => (
   <div>
-    // <img src={cover} />
+    {console.log({
+      title: props.book.title,
+      authors: props.book.authors,
+      thumbnail: props.book.imageLinks.thumbnail
+    })}
     <div
-      // className="book-cover"
+      className="book-cover"
       style={{
         width: 128,
         height: 193,
-        backgroundImage: `url(${cover})`
+        backgroundImage: `url(${props.book.imageLinks.thumbnail})`
       }}
     />
-    <p>{title}</p>
-    <p>{author}</p>
+    <p>{props.book.title}</p>
+    <p>{props.book.authors}</p>
   </div>
 );
