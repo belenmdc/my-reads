@@ -1,0 +1,17 @@
+.book-shelf-changer {
+  background: #9faec6;
+  background-image: url("../../assets/arrow.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px;
+  border-radius: 50%;
+  height: 1.5rem;
+  margin-left: 1rem;
+  width: 1.5rem;
+}
+
+.book-shelf-changer select {
+  height: 100%;
+  opacity: 0;
+  width: 100%;
+}

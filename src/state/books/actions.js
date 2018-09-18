@@ -12,3 +12,14 @@ const setBooks = books => ({
   type: "SET_BOOKS",
   books: books
 });
+
+export const updateBook = (bookId, shelf) => ({
+  type: "UPDATE_BOOK",
+  bookId: bookId,
+  shelf: shelf
+});
+
+export const removeBook = bookId => ({
+  type: "REMOVE_BOOK",
+  bookId: bookId
+});
