@@ -1,0 +1,15 @@
+.shelf-container {
+  background: #f4f6f9;
+  border-radius: 4px;
+  margin: 0.5rem;
+  padding: 1.25rem;
+}
+
+.shelf-title {
+}
+
+.shelf-books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
