@@ -1,4 +1,4 @@
-import { getAll } from "../../networking/BooksAPI";
+import { getAll, update } from "../../networking/BooksAPI";
 
 export const startSetBooks = () => {
   return dispatch => {
@@ -12,6 +12,18 @@ const setBooks = books => ({
   type: "SET_BOOKS",
   books: books
 });
+
+export const startUpdateBook = (bookId, shelf) => {
+  return dispatch => {
+    return update(bookId, shelf).then(() => {
+      if (shelf === "none") {
+        dispatch(removeBook(bookId));
+      } else {
+        dispatch(updateBook(bookId, shelf));
+      }
+    });
+  };
+};
 
 export const updateBook = (bookId, shelf) => ({
   type: "UPDATE_BOOK",

@@ -1,19 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { removeBook, updateBook } from "../../state/books/actions";
+import { removeBook, startUpdateBook } from "../../state/books/actions";
 import "./styles.css";
 
 export class MoveTo extends React.Component {
   onSelect = e => {
     const bookId = this.props.book.id;
     const shelf = e.target.value;
-    switch (shelf) {
-      case "none":
-        this.props.removeBook(bookId);
-        break;
-      default:
-        this.props.updateBook(bookId, e.target.value);
-    }
+    this.props.updateBook(bookId, e.target.value);
   };
 
   render() {
@@ -34,8 +28,7 @@ export class MoveTo extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  updateBook: (bookId, shelf) => dispatch(updateBook(bookId, shelf)),
-  removeBook: bookId => dispatch(removeBook(bookId))
+  updateBook: (bookId, shelf) => dispatch(startUpdateBook(bookId, shelf))
 });
 
 export default connect(

@@ -15,3 +15,13 @@ export const getAll = () =>
   fetch(`${api}/books`, { headers })
     .then(res => res.json())
     .then(data => data.books);
+
+export const update = (bookId, shelf) =>
+  fetch(`${api}/books/${bookId}`, {
+    method: "PUT",
+    headers: {
+      ...headers,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ shelf })
+  }).then(res => res.json());
