@@ -5,15 +5,20 @@ import "./styles.css";
 
 export class MoveTo extends React.Component {
   onSelect = e => {
-    const bookId = this.props.book.id;
-    this.props.updateBook(bookId, e.target.value);
+    const book = this.props.book;
+    this.props.updateBook(book, e.target.value);
   };
 
   render() {
     return (
       <div className="book-shelf-changer">
-        <select onChange={this.onSelect} defaultValue={this.props.book.shelf}>
-          <option value="none" disabled>
+        <select
+          onChange={this.onSelect}
+          defaultValue={
+            this.props.book.shelf !== undefined ? this.props.book.shelf : "none"
+          }
+        >
+          <option value="moveto" disabled>
             Move to...
           </option>
           <option value="currentlyReading">Currently Reading</option>
@@ -27,7 +32,7 @@ export class MoveTo extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  updateBook: (bookId, shelf) => dispatch(startUpdateBook(bookId, shelf))
+  updateBook: (book, shelf) => dispatch(startUpdateBook(book, shelf))
 });
 
 export default connect(

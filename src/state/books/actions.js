@@ -13,21 +13,21 @@ const setBooks = books => ({
   books: books
 });
 
-export const startUpdateBook = (bookId, shelf) => {
+export const startUpdateBook = (book, shelf) => {
   return dispatch => {
-    return update(bookId, shelf).then(() => {
+    return update(book, shelf).then(() => {
       if (shelf === "none") {
-        dispatch(removeBook(bookId));
+        dispatch(removeBook(book.id));
       } else {
-        dispatch(updateBook(bookId, shelf));
+        dispatch(updateBook(book, shelf));
       }
     });
   };
 };
 
-const updateBook = (bookId, shelf) => ({
+const updateBook = (book, shelf) => ({
   type: "UPDATE_BOOK",
-  bookId: bookId,
+  book: book,
   shelf: shelf
 });
 

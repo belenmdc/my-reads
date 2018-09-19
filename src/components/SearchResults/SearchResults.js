@@ -1,13 +1,29 @@
 import React from "react";
+import { connect } from "react-redux";
+import Shelf from "../Shelf/Shelf";
 
-export default props => {
-  const getTitle = () => {
-    return props.query.length === 0 ? "No results found" : "Results";
+class SearchResults extends React.Component {
+  getTitle = () => {
+    return this.props.query.length === 0 ? "No results found" : "Results";
   };
 
-  const getResults = () => {
-    return props.results != undefined ? props.results : [];
+  getResults = () => {
+    return this.props.results;
   };
 
-  return <Shelf title={getTitle()} books={getResults()} />;
-};
+  render() {
+    if (this.props.query.length > 0) {
+      return <Shelf title={this.getTitle()} books={this.getResults()} />;
+    } else {
+      return null;
+    }
+  }
+}
+
+const mapStateToProps = (state, props) => ({
+  myBooks: state.books,
+  results: state.search.results,
+  query: state.search.query
+});
+
+export default connect(mapStateToProps)(SearchResults);

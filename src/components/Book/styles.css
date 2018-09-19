@@ -9,6 +9,7 @@
 
 .book-cover {
   align-self: center;
+  background-color: #8b9eba;
   height: 12rem;
   width: 8rem;
 }
