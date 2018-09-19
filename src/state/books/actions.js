@@ -25,13 +25,13 @@ export const startUpdateBook = (bookId, shelf) => {
   };
 };
 
-export const updateBook = (bookId, shelf) => ({
+const updateBook = (bookId, shelf) => ({
   type: "UPDATE_BOOK",
   bookId: bookId,
   shelf: shelf
 });
 
-export const removeBook = bookId => ({
+const removeBook = bookId => ({
   type: "REMOVE_BOOK",
   bookId: bookId
 });

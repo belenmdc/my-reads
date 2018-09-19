@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { removeBook, startUpdateBook } from "../../state/books/actions";
+import { startUpdateBook } from "../../state/books/actions";
 import "./styles.css";
 
 export class MoveTo extends React.Component {
   onSelect = e => {
     const bookId = this.props.book.id;
-    const shelf = e.target.value;
     this.props.updateBook(bookId, e.target.value);
   };
 
