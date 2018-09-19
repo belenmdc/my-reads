@@ -1,0 +1,17 @@
+.header {
+  align-items: baseline;
+  background-color: white;
+  display: flex;
+  font-size: 2rem;
+  padding-left: 30px;
+}
+
+.header-link {
+  color: black;
+  margin-right: 1.5rem;
+  text-decoration: none;
+}
+
+.selected {
+  font-weight: bolder;
+}

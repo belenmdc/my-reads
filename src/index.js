@@ -3,14 +3,15 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import configureStore from "./state/store";
 import "./index.css";
-import App from "./components/App/App";
+import AppRouter from "./routers/Router";
+
 import registerServiceWorker from "./registerServiceWorker";
 import { startSetBooks } from "./state/books/actions";
 
 const store = configureStore();
 const jsx = (
   <Provider store={store}>
-    <App />
+    <AppRouter />
   </Provider>
 );
 

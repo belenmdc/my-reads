@@ -1,0 +1,17 @@
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.form input {
+  border: 1px #bcc8db;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 1rem 0.5rem;
+  width: 20rem;
+}
+
+.search-title {
+  margin: 8px;
+}
