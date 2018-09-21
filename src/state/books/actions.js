@@ -15,7 +15,7 @@ const setBooks = books => ({
 
 export const startUpdateBook = (book, shelf) => {
   return dispatch => {
-    return update(book, shelf).then(() => {
+    return update(book.id, shelf).then(() => {
       if (shelf === "none") {
         dispatch(removeBook(book.id));
       } else {
