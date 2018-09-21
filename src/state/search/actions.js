@@ -4,7 +4,8 @@ export const startSearch = (query, myBooks) => {
   return dispatch => {
     return search(query).then(results => {
       let updatedResults = [];
-      if (results !== undefined) {
+      console.log("Results: ", results);
+      if (results !== undefined && Array.isArray(results)) {
         updatedResults = results.map(result => {
           const match = myBooks.filter(book => result.id === book.id);
           if (match.length > 0) {
@@ -25,7 +26,7 @@ export const startSearch = (query, myBooks) => {
   };
 };
 
-const setResults = books => ({
+export const setResults = books => ({
   type: "SET_RESULTS",
   results: books
 });

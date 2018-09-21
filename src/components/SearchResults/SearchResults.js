@@ -4,7 +4,11 @@ import Shelf from "../Shelf/Shelf";
 
 class SearchResults extends React.Component {
   getTitle = () => {
-    return this.props.query.length === 0 ? "No results found" : "Results";
+    if (this.props.results !== undefined) {
+      return this.props.results.length === 0 ? "No results found" : "Results";
+    } else {
+      return "No results found";
+    }
   };
 
   getResults = () => {

@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setQuery, startSearch } from "../../state/search/actions";
+import { setQuery, setResults, startSearch } from "../../state/search/actions";
 import "./styles.css";
 
 class SearchField extends React.Component {
   onChange = e => {
+    this.props.setResults([]);
     const query = e.target.value;
     this.props.setQuery(query);
     if (e.target.value !== "") {
@@ -33,6 +34,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setQuery: query => dispatch(setQuery(query)),
+  setResults: results => dispatch(setResults(results)),
   startSearch: (query, myBooks) => dispatch(startSearch(query, myBooks))
 });
 
