@@ -7,22 +7,22 @@
   width: 10rem;
 }
 
-.book-cover {
+.bookCover {
   align-self: center;
   background-color: #8b9eba;
   height: 12rem;
   width: 8rem;
 }
 
-.book-top {
+.bookTop {
   display: flex;
   flex-flow: row;
 }
 
-.book-title {
+.bookTitle {
   font-weight: bold;
 }
 
-.book-author {
+.bookAuthor {
   font-style: italic;
 }

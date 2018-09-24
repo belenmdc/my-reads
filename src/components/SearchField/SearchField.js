@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { setQuery, setResults, startSearch } from "../../state/search/actions";
-import "./styles.css";
+import styles from "./styles.css";
 
 class SearchField extends React.Component {
   onChange = e => {
@@ -15,7 +15,7 @@ class SearchField extends React.Component {
 
   render() {
     return (
-      <form className="form">
+      <form className={styles.form}>
         <input
           type="text"
           placeholder="Search books"

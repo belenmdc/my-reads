@@ -1,6 +1,6 @@
 import React from "react";
 import MoveTo from "../MoveTo/MoveTo";
-import "./styles.css";
+import styles from "./styles.css";
 
 export default props => {
   const getImageURL = () => {
@@ -13,11 +13,11 @@ export default props => {
   };
 
   return (
-    <div className="book">
+    <div className={styles.book}>
       {console.log(props.book)}
-      <div className="book-top">
+      <div className={styles.bookTop}>
         <div
-          className="book-cover"
+          className={styles.bookCover}
           style={{
             backgroundImage: `url(${getImageURL()})`
           }}
@@ -25,8 +25,8 @@ export default props => {
         <MoveTo book={props.book} />
       </div>
 
-      <p className="book-title">{props.book.title}</p>
-      <p className="book-author">
+      <p className={styles.bookTitle}>{props.book.title}</p>
+      <p className={styles.bookAuthor}>
         {props.book.authors && props.book.authors.join(", ")}
       </p>
     </div>

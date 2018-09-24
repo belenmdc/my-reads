@@ -1,4 +1,4 @@
-.book-shelf-changer {
+.bookShelfChanger {
   background: #9faec6;
   background-image: url("../../assets/arrow.png");
   background-repeat: no-repeat;
@@ -10,7 +10,7 @@
   width: 1.5rem;
 }
 
-.book-shelf-changer select {
+.bookShelfChanger select {
   height: 100%;
   opacity: 0;
   width: 100%;

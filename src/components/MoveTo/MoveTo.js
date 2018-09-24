@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { startUpdateBook } from "../../state/books/actions";
-import "./styles.css";
+import styles from "./styles.css";
 
 export class MoveTo extends React.Component {
   onSelect = e => {
@@ -11,7 +11,7 @@ export class MoveTo extends React.Component {
 
   render() {
     return (
-      <div className="book-shelf-changer">
+      <div className={styles.bookShelfChanger}>
         <select
           onChange={this.onSelect}
           defaultValue={

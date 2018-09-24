@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import Header from "../Header/Header";
-import MainPage from "../../views/MainPage";
+// import Header from "../Header/Header";
+import AppRouter from "../../routers/Router";
 
 class App extends Component {
   render() {
-    return (
-      <div>
-        <Header />
-        <MainPage />
-      </div>
-    );
+    return <AppRouter />;
   }
 }
 

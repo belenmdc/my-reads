@@ -1,18 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./styles.css";
+import styles from "./styles.css";
 
 export default () => (
-  <div className="header">
+  <div className={styles.header}>
     <NavLink
       to="/"
-      activeClassName="selected"
-      className="header-link"
+      activeClassName={styles.selected}
+      className={styles.headerLink}
       exact={true}
     >
       <p>My Reads</p>
     </NavLink>
-    <NavLink to="/search" activeClassName="selected" className="header-link">
+    <NavLink
+      to="/search"
+      activeClassName={styles.selected}
+      className={styles.headerLink}
+    >
       <p>Search</p>
     </NavLink>
   </div>
