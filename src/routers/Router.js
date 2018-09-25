@@ -5,7 +5,7 @@ import Header from "../components/Header/Header";
 import MainPage from "../views/MainPage";
 import SearchPage from "../views/SearchPage";
 
-const history = createHistory();
+export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>

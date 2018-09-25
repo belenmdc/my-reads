@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import SearchButton from "../Search/Search";
 import styles from "./styles.css";
 
 export default () => (
@@ -12,12 +13,8 @@ export default () => (
     >
       <p>My Reads</p>
     </NavLink>
-    <NavLink
-      to="/search"
-      activeClassName={styles.selected}
-      className={styles.headerLink}
-    >
-      <p>Search</p>
+    <NavLink to="/search" className={styles.headerLink}>
+      <SearchButton />
     </NavLink>
   </div>
 );
